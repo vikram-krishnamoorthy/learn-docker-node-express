@@ -29,10 +29,10 @@ exports.login = async (req, res) => {
         const user = await User.findOne({username});
 
         if (!user) {
-            res.status(404).json({
-                status: "fail",
-                message: "incorrect username or password"
-            });
+            return res.status(404).json({
+                status: 'fail',
+                message: 'incorrect username or password'
+            })
         }
         const isCorrect = await bcrypt.compare(password, user.password);
 
@@ -47,7 +47,7 @@ exports.login = async (req, res) => {
             })
         }
     } catch (e) {
-        res.status(400).json({
+        res.status(400).json({ 
             status: "fail",
         });
     }
