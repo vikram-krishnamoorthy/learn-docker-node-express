@@ -6,3 +6,11 @@ services:
             - "3000:3000"
         environment: 
             - PORT=3000
+        depends_on: 
+            - fcc_mongo_db
+    fcc-mongo-db:
+        image: mongo
+        volumes:
+            - mongo-db:/data/db
+volumes:
+    mongo-db:
