@@ -7,7 +7,7 @@ services:
         environment: 
             - PORT=3000
         depends_on: 
-            - fcc_mongo_db
+            - fcc-mongo-db
     fcc-mongo-db:
         image: mongo
         volumes:
