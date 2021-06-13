@@ -8,3 +8,6 @@ services:
         environment:
             - NODE_ENV=production
         command: node index.js
+    fcc-nginx:
+        ports:
+            - "80:80"
