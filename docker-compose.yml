@@ -12,5 +12,7 @@ services:
         image: mongo
         volumes:
             - mongo-db:/data/db
+    fcc-redis-db:
+        image: redis
 volumes:
     mongo-db:

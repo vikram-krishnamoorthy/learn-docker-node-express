@@ -12,9 +12,9 @@ services:
             - NODE_ENV=development
             - MONGO_USER=fccuser
             - MONGO_PASSWORD=devpass
+            - SESSION_SECRET=devsecret
         command: npm run dev
     fcc-mongo-db:
         environment: 
             - MONGO_INITDB_ROOT_USERNAME=fccuser
             - MONGO_INITDB_ROOT_PASSWORD=devpass
-            
