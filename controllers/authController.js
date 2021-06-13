@@ -3,11 +3,10 @@ const bcrypt = require("bcryptjs");
 
 exports.signup = async (req, res) => {
     const {username, password} = req.body;
-    const hashPassword = await bcrypt.hash(password, 12);
     try {
         const hashPassword = await bcrypt.hash(password, 12);
         const newUser = await User.create({
-            username, 
+            username: username, 
             password: hashPassword
         });
         res.status(201).json({
